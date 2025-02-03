@@ -2181,7 +2181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea63139eaf53f214fa135f3c7cbef00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
+  sceneName: Pause Game Test
   optionsPanel: {fileID: 1227144212}
   mainMenuPanel: {fileID: 1396904583}
 --- !u!4 &1845928215
