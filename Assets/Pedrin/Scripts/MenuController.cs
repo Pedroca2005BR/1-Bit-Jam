@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         menuCanvas.SetActive(false);
+
     }
 
     void Update(){

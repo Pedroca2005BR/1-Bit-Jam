@@ -7,6 +7,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject mainMenuPanel;
 
+    void Start()
+    {
+        AudioManager.Instance.PlayMusic("Piano");
+    }
+
     public void Play()
     {
         SceneManager.LoadScene(sceneName);   
