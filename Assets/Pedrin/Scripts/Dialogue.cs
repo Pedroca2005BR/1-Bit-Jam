@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour
     public List<string> dialogues;
     //Velocidade de escrita
     public float writingSpeed = 0.1f;
+    public float waitTime = 0.5f;
     //Índice de diálogo
     private int index;
     //indice do caracter
@@ -84,7 +85,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(waitTime);
             waitForNext = true;
         }
     }
