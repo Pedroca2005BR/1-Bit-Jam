@@ -1,15 +1,20 @@
 using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
 public class ShootProjectileComponent : MonoBehaviour
 {
+    [Header("Necessary References")]
     [SerializeField] private GameObject _projectile;
+    [SerializeField] private Transform _attackPoint;
+
+    [Header("Additional Information")]
     [SerializeField] private float _attackRange;
     [SerializeField] private float _shootCooldown;
     [SerializeField] private float _chargeTime;
     [SerializeField] private float _rechargeTime;
 
-    [SerializeField] private bool _shootAtPlayer;
+    [SerializeField] private bool _shootAtPlayer;   // Se true, projétil vai possuir informações em relação ao player.
 
 
     public bool _isDisabled {  get; private set; }
@@ -61,7 +66,7 @@ public class ShootProjectileComponent : MonoBehaviour
 
 
         // Instantiate cria o projetil com base no prefab colocado em _projectile
-        GameObject instance = Instantiate(_projectile, transform.position, Quaternion.identity);
+        GameObject instance = Instantiate(_projectile, _attackPoint.position, Quaternion.identity);
 
         Vector2 orientation;
 
@@ -91,6 +96,9 @@ public class ShootProjectileComponent : MonoBehaviour
 
         // Necessário para que o projetil saiba para que lado ir
         instance.GetComponent<ProjectileBaseBehaviour>().SetDirection(orientation);
+
+        // Necessário para acertar o posicionamento do ataque
+        instance.transform.localScale = new Vector3(transform.localScale.x, instance.transform.localScale.y, instance.transform.localScale.z);
 
         yield return new WaitForSeconds(_rechargeTime);
 

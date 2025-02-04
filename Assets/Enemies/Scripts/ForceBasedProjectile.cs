@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class ForceBasedProjectile : ProjectileBaseBehaviour
 {
+    // Floor é o mínimo de força e Ceiling é o máximo
     [SerializeField] private float _forceMultiplierFloor;
     [SerializeField] private float _forceMultiplierCeiling;
+
     private void Update()
     {
         if (_orientation != Vector2.zero)
