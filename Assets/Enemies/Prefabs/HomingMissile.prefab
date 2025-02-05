@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7789884657862097679}
   m_Layer: 0
   m_Name: HomingMissile
-  m_TagString: Untagged
+  m_TagString: PlayerKiller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 0
+  _lifeSpan: 5
   _rotateSpeed: 1000
   _followSpeed: 1000
 --- !u!50 &1085831585859337156
