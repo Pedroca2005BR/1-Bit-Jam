@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Pedrin/Main Menu.unity
     guid: 7461340d591e25b4bbf7c0ec8d2fb2c6
   - enabled: 1
+    path: Assets/Pedrin/Dialogue Boxes.unity
+    guid: 6aecbf913e5c12c43a72b5f1b2e573dd
+  - enabled: 1
     path: Assets/Pedrin/Pause Game Test.unity
     guid: 2ceeb7fa13414be48966b8c65b79f005
   m_configObjects:
