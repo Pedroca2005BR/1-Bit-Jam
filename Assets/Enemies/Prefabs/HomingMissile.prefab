@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 890908992714770534}
   - component: {fileID: 1085831585859337156}
   - component: {fileID: 7789884657862097679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HomingMissile
   m_TagString: PlayerKiller
   m_Icon: {fileID: 0}
@@ -104,8 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _direction: 0
   _lifeSpan: 5
-  _rotateSpeed: 1000
-  _followSpeed: 1000
+  _rotateSpeed: 500
+  _followSpeed: 500
 --- !u!50 &1085831585859337156
 Rigidbody2D:
   serializedVersion: 5

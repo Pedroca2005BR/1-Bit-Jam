@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 472460566657669559}
   - component: {fileID: 4726446242645282336}
   - component: {fileID: 2140596364999422907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HorizontalProjectile
   m_TagString: PlayerKiller
   m_Icon: {fileID: 0}

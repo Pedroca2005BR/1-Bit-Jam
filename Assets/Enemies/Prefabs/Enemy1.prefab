@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3633743637748453250}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PatrolPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 3533036269113696381}
   - component: {fileID: 3323180470091362927}
   - component: {fileID: 6568989199391108047}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TrueEnemy
-  m_TagString: PlayerKiller
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1153832784168920785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -245,9 +245,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5332560947983666481}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6816489238271590461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6531963014341048800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PatrolPoint1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7519716778387140234}
   - component: {fileID: 8671870971966226840}
   - component: {fileID: 6262626078520837053}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy4
-  m_TagString: PlayerKiller
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 145260683544489416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}

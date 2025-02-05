@@ -8,8 +8,6 @@ public class CheckPoint : MonoBehaviour
         // Se o objeto de colisão tiver o componente IRespawnable, entra no if
         if (collision.gameObject.TryGetComponent<IRespawnable>(out var respawnable))
         {
-            // TO DO: Rodar animação
-
             // Salva o novo spawnpoint e desliga esse código para não rodar nada aqui novamente
             respawnable.SetSpawnPoint(transform);
             Destroy(this);

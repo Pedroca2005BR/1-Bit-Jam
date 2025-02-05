@@ -22,4 +22,12 @@ public class HomingProjectile : ProjectileBaseBehaviour
 
         _rb.linearVelocity = _followSpeed * Time.deltaTime * transform.up;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

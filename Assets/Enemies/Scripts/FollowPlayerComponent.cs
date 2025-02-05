@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(ShootProjectileComponent))]
 public class FollowPlayerComponent : MonoBehaviour
 {
+    [SerializeField] private Transform _restPoint;
     [SerializeField] private float _followSpeed;
     [SerializeField] private float _followRadius;
 
@@ -31,15 +32,22 @@ public class FollowPlayerComponent : MonoBehaviour
         // Se o player está dentro do follow radius, começa a perseguição
         if (Vector2.Distance(_player.position, _rb.position) < _followRadius)
         {
-            Follow();
+            GoToTarget(_player);
+        }
+        else
+        {
+
+            if (Vector2.Distance(_restPoint.position, _rb.position) < 2f) return;
+            GoToTarget(_restPoint);
+            
         }
         
     }
 
 
-    private void Follow()
+    private void GoToTarget(Transform target)
     {
-        Vector2 orientation = (_player.position - transform.position).normalized;
+        Vector2 orientation = (target.position - transform.position).normalized;
 
         // Controla a direção para qual o objeto está olhando, de forma que sempre olha para seu objetivo: o player
         if (orientation.x < 0)
@@ -59,9 +67,13 @@ public class FollowPlayerComponent : MonoBehaviour
         _rb.linearVelocity = new Vector2(orientation.x, 0) * _followSpeed;
     }
 
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _followRadius);
+
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(_restPoint.position, 2f);
     }
 }

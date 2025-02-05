@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1437823560180814286}
   - component: {fileID: 5869703250404893474}
   - component: {fileID: 7743666384569001613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DiagonalProjectile
   m_TagString: PlayerKiller
   m_Icon: {fileID: 0}

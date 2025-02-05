@@ -98,7 +98,11 @@ public class ShootProjectileComponent : MonoBehaviour
         instance.GetComponent<ProjectileBaseBehaviour>().SetDirection(orientation);
 
         // Necessário para acertar o posicionamento do ataque
-        instance.transform.localScale = new Vector3(transform.localScale.x, instance.transform.localScale.y, instance.transform.localScale.z);
+        if (transform.localScale.x < 0)
+        {
+            instance.transform.localScale = new Vector3(instance.transform.localScale.x * -1, instance.transform.localScale.y, instance.transform.localScale.z);
+        }
+        
 
         yield return new WaitForSeconds(_rechargeTime);
 

@@ -1,7 +1,8 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IRespawnable
 {
     private float horizontal;
     private float speed = 8; //velocidade do jogador
@@ -12,8 +13,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private Transform respawnPoint; // controla o ponto de respawn
+    private bool isDisabled = false;    // isDisabled controla se o Update pode ser chamado ou não. Importante para Respawn
+
     void Update()
     {
+        if (isDisabled) return;
+
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if(Input.GetButtonDown("Jump") && NoChao())//pula se o jogador estiver tocando o chão com o layer 'Ground'
@@ -28,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDisabled) return;
+
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y); // velocidade de movimento do jogador
     }
     private bool NoChao()
@@ -46,5 +54,39 @@ public class PlayerMovement : MonoBehaviour
         
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerKiller"))
+        {
+            StartCoroutine(Respawn());
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(Respawn());
+        }
+    }
+
+    public void SetSpawnPoint(Transform transform)
+    {
+        respawnPoint = transform;
+        
+        // TO DO: Rodar animação de dormir
+    }
+
+    public IEnumerator Respawn()
+    {
+        isDisabled = true;
+
+        // TO DO: Colocar animação e trocar o tempo de WaitForSeconds para o tempo de animação
+
+        yield return new WaitForSeconds(0.1f);
+
+        transform.position = respawnPoint.position;
+
+        yield return new WaitForSeconds(0.1f);
+        isDisabled = false;
     }
 }
