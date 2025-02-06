@@ -16,6 +16,28 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     private Transform respawnPoint; // controla o ponto de respawn
     private bool isDisabled = false;    // isDisabled controla se o Update pode ser chamado ou não. Importante para Respawn
 
+    //animation variables
+    private Animator animator;
+    private string currentAnimation = "";
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>(); // pega  referencia animator
+    }
+
+
+  
+    //função que  muda as animações
+    private void ChangeAnimation(string animation, float crosfade  = 0.2f)
+    {
+        if(currentAnimation != animation)
+        {
+            currentAnimation = animation;
+            animator.CrossFade(animation, crosfade);
+
+        }
+    }
+
     void Update()
     {
         if (isDisabled) return;
@@ -30,7 +52,12 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
         Flip();
 
+
+        CheckAnimation(); // chama função de checar animações
     }
+
+   
+
 
     private void FixedUpdate()
     {
@@ -43,6 +70,23 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer); // Vê se o jogador está tocando o chão 
 
     }
+
+    private void CheckAnimation()
+    {
+        if(rb.linearVelocityX >0.05f || rb.linearVelocityX < -0.05f)
+        {
+            ChangeAnimation("walk_rap_ani");
+        }
+        else
+        {
+            ChangeAnimation("Idle_rap_ani");
+        }
+
+
+    }
+
+
+
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || isFacingRight && horizontal > 0f) // Gira o sprite para o direção que o jogador estiver olhando
