@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c9f0080e2b700404e828745e23ea3d1b
+guid: 6e2bcc570cb34084ba3e5da43441551a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8598454152648701855
-    second: tela_congelando2_0
+      213: 1409831857302421704
+    second: caixa_texto_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tela_congelando2_0
+      name: caixa_texto_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 192
-        height: 108
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f97bb1ace78d35770800000000000000
-      internalID: 8598454152648701855
+      spriteID: 8c04a87ca9ab09310800000000000000
+      internalID: 1409831857302421704
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tela_congelando2_0: 8598454152648701855
+      caixa_texto_0: 1409831857302421704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

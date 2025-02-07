@@ -734,7 +734,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tiles_chao_0: 2432956349375315971
+      tiles_chao_1: 8254090605675134515
+      tiles_chao_10: 8962386059796496896
+      tiles_chao_11: 5966608319694638435
+      tiles_chao_12: -9011309128837926647
+      tiles_chao_13: -5536877293773799933
+      tiles_chao_14: 517433955923159469
+      tiles_chao_15: 2392186573601310096
+      tiles_chao_16: -3666181384236715775
+      tiles_chao_17: 3714222877167179847
+      tiles_chao_18: 4883033751704914964
+      tiles_chao_19: -5334669008913563447
+      tiles_chao_2: -1009347833323595425
+      tiles_chao_20: 5943264144248313326
+      tiles_chao_21: 7552895552870356041
+      tiles_chao_22: 2457707591640022369
+      tiles_chao_23: -9134473249700114650
+      tiles_chao_24: -5176738668622903958
+      tiles_chao_3: 5380102083896482840
+      tiles_chao_4: -3314300171673884900
+      tiles_chao_5: -3395983034375315728
+      tiles_chao_6: 5492642057995460441
+      tiles_chao_7: -4171486420484321066
+      tiles_chao_8: 5643327075764547714
+      tiles_chao_9: 3206472261458919262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
