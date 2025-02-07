@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f08523d8464015e4d93a603674367b96
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _FSFreeze: {fileID: -1714190134165053718, guid: 4465919f93acd18418d4ee5d7e827add, type: 2}
+  - _material: {fileID: 2100000, guid: 359d2791384c9b84492cd006d48ec914, type: 2}
+  - script: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

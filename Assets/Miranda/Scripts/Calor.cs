@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Calor : MonoBehaviour
 {
-    public Image BarraCalorImagem;
+    //public Image BarraCalorImagem;
     //calor = o valor atual da barra de calor
     //CalorMax = o valor maximo que a barra pode encher
     //VelocidadeEsquentar = a quantidade por segundo que a barra de temperatura aumenta dentro do alcance de uma tocha
@@ -25,7 +25,7 @@ public class Calor : MonoBehaviour
         if (calor > 100) calor = 100;
         if (calor < 0) calor = 0;
 
-        BarraCalorImagem.fillAmount = calor / CalorMax;
+        //BarraCalorImagem.fillAmount = calor / CalorMax;
 
     }
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
