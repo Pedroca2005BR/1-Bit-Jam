@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 242afdee7c694f845805db54d9cdb2f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2432956349375315971
+    second: tiles_chao_0
+  - first:
+      213: 8254090605675134515
+    second: tiles_chao_1
+  - first:
+      213: -1009347833323595425
+    second: tiles_chao_2
+  - first:
+      213: 5380102083896482840
+    second: tiles_chao_3
+  - first:
+      213: -3314300171673884900
+    second: tiles_chao_4
+  - first:
+      213: -3395983034375315728
+    second: tiles_chao_5
+  - first:
+      213: 5492642057995460441
+    second: tiles_chao_6
+  - first:
+      213: -4171486420484321066
+    second: tiles_chao_7
+  - first:
+      213: 5643327075764547714
+    second: tiles_chao_8
+  - first:
+      213: 3206472261458919262
+    second: tiles_chao_9
+  - first:
+      213: 8962386059796496896
+    second: tiles_chao_10
+  - first:
+      213: 5966608319694638435
+    second: tiles_chao_11
+  - first:
+      213: -9011309128837926647
+    second: tiles_chao_12
+  - first:
+      213: -5536877293773799933
+    second: tiles_chao_13
+  - first:
+      213: 517433955923159469
+    second: tiles_chao_14
+  - first:
+      213: 2392186573601310096
+    second: tiles_chao_15
+  - first:
+      213: -3666181384236715775
+    second: tiles_chao_16
+  - first:
+      213: 3714222877167179847
+    second: tiles_chao_17
+  - first:
+      213: 4883033751704914964
+    second: tiles_chao_18
+  - first:
+      213: -5334669008913563447
+    second: tiles_chao_19
+  - first:
+      213: 5943264144248313326
+    second: tiles_chao_20
+  - first:
+      213: 7552895552870356041
+    second: tiles_chao_21
+  - first:
+      213: 2457707591640022369
+    second: tiles_chao_22
+  - first:
+      213: -9134473249700114650
+    second: tiles_chao_23
+  - first:
+      213: -5176738668622903958
+    second: tiles_chao_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tiles_chao_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 363
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3000c8ec8e893c120800000000000000
+      internalID: 2432956349375315971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 363
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33eb72f7cab6c8270800000000000000
+      internalID: 8254090605675134515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_2
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 363
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59dfeb4e731ef1f0800000000000000
+      internalID: -1009347833323595425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_3
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 223
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c1dfd1756f9aa40800000000000000
+      internalID: 5380102083896482840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 223
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c17ac54cd8d3102d0800000000000000
+      internalID: -3314300171673884900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 223
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe5ec44c6b0fd0d0800000000000000
+      internalID: -3395983034375315728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_6
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f9039b9d8c93c40800000000000000
+      internalID: 5492642057995460441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_7
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d09aa9b337eb16c0800000000000000
+      internalID: -4171486420484321066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_8
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2803a466310215e40800000000000000
+      internalID: 5643327075764547714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ff66e788daf7c20800000000000000
+      internalID: 3206472261458919262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_10
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002451af2aac06c70800000000000000
+      internalID: 8962386059796496896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_11
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d0a4187a6adc250800000000000000
+      internalID: 5966608319694638435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 175
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901716e571661f280800000000000000
+      internalID: -9011309128837926647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 175
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ebfabdf6f0923b0800000000000000
+      internalID: -5536877293773799933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_14
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da96681017b4e2700800000000000000
+      internalID: 517433955923159469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_15
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09507fba301c23120800000000000000
+      internalID: 2392186573601310096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_16
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 191
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101bb6e847b1f1dc0800000000000000
+      internalID: -3666181384236715775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 127
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748dd2a27029b8330800000000000000
+      internalID: 3714222877167179847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 127
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c4d94635504c340800000000000000
+      internalID: 4883033751704914964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_19
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 143
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c00c69fcc277f5b0800000000000000
+      internalID: -5334669008913563447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_20
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 143
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee59c3c1047ba7250800000000000000
+      internalID: 5943264144248313326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_21
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 143
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94417760d7641d860800000000000000
+      internalID: 7552895552870356041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 162
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16dfb7978088b1220800000000000000
+      internalID: 2457707591640022369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_23
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 15
+        width: 162
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62f0155d9f4db3180800000000000000
+      internalID: -9134473249700114650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_chao_24
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 15
+        width: 162
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6504b1cb978828b0800000000000000
+      internalID: -5176738668622903958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tiles_chao_0: 2432956349375315971
+      tiles_chao_1: 8254090605675134515
+      tiles_chao_10: 8962386059796496896
+      tiles_chao_11: 5966608319694638435
+      tiles_chao_12: -9011309128837926647
+      tiles_chao_13: -5536877293773799933
+      tiles_chao_14: 517433955923159469
+      tiles_chao_15: 2392186573601310096
+      tiles_chao_16: -3666181384236715775
+      tiles_chao_17: 3714222877167179847
+      tiles_chao_18: 4883033751704914964
+      tiles_chao_19: -5334669008913563447
+      tiles_chao_2: -1009347833323595425
+      tiles_chao_20: 5943264144248313326
+      tiles_chao_21: 7552895552870356041
+      tiles_chao_22: 2457707591640022369
+      tiles_chao_23: -9134473249700114650
+      tiles_chao_24: -5176738668622903958
+      tiles_chao_3: 5380102083896482840
+      tiles_chao_4: -3314300171673884900
+      tiles_chao_5: -3395983034375315728
+      tiles_chao_6: 5492642057995460441
+      tiles_chao_7: -4171486420484321066
+      tiles_chao_8: 5643327075764547714
+      tiles_chao_9: 3206472261458919262
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
