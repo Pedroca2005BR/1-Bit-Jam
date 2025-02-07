@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     private Transform respawnPoint; // controla o ponto de respawn
     private bool isDisabled = false;    // isDisabled controla se o Update pode ser chamado ou não. Importante para Respawn
+    public Calor script;
 
     void Update()
     {
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
         }
 
+        if(script.calor <= 0 ) StartCoroutine(Respawn()); 
         Flip();
 
     }
@@ -78,6 +80,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     public IEnumerator Respawn()
     {
+        script.calor = 100;
         isDisabled = true;
 
         // TO DO: Colocar animação e trocar o tempo de WaitForSeconds para o tempo de animação

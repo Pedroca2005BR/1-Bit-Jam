@@ -23,7 +23,6 @@ public class Calor : MonoBehaviour
 
         //para o valor não passar dos limites estabelecidos
         if (calor > 100) calor = 100;
-        if (calor < 0) calor = 0;
 
         //BarraCalorImagem.fillAmount = calor / CalorMax;
 
