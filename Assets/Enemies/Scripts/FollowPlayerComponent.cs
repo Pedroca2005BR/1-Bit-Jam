@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent (typeof(Rigidbody2D))]
 [RequireComponent(typeof(ShootProjectileComponent))]
@@ -12,12 +13,18 @@ public class FollowPlayerComponent : MonoBehaviour
     private Rigidbody2D _rb;
     private ShootProjectileComponent _shootRef;
 
+    // Animation variables
+    private Animator animator;
+    private string currentAnimation = "";
+
     private void Start()
     {
         _shootRef = GetComponent<ShootProjectileComponent>();
         _player = FindFirstObjectByType<PlayerMovement>().transform;
         _rb = GetComponent<Rigidbody2D>();
 
+
+        animator = GetComponent<Animator>(); // Pega referência do animator
     }
 
 
@@ -41,8 +48,53 @@ public class FollowPlayerComponent : MonoBehaviour
             GoToTarget(_restPoint);
             
         }
-        
+
+
+        CheckAnimation(); //chaca animações
     }
+
+    private void CheckAnimation()
+    {
+        if(_rb.linearVelocity.x < -0.1f || _rb.linearVelocity.x > 0.1f)
+        {
+            ChangeAnimation("walk_ini2");
+            
+           
+        }
+        else
+        {
+
+            ChangeAnimation("idle_ini2");
+        }
+    }
+
+    public void ChangeAnimation(string animation, float crosfade = 0.2f, float time = 0)
+    {
+        if (time > 0) StartCoroutine(Wait());
+        else Validate();
+
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(time - crosfade);
+
+
+            Validate();
+        }
+
+
+        void Validate()
+        {
+            if (currentAnimation != animation)
+            {
+                currentAnimation = animation;
+                if (currentAnimation == "")
+                    CheckAnimation();
+                else
+                    animator.CrossFade(animation, crosfade);
+            }
+        }
+    }
+
 
 
     private void GoToTarget(Transform target)

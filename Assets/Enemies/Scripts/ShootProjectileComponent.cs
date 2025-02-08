@@ -9,6 +9,7 @@ public class ShootProjectileComponent : MonoBehaviour
     [SerializeField] private Transform _attackPoint;
 
     [Header("Additional Information")]
+    [SerializeField] private int enemy_type; //diferenciar inimigos para animacao
     [SerializeField] private float _attackRange;
     [SerializeField] private float _shootCooldown;
     [SerializeField] private float _chargeTime;
@@ -69,9 +70,19 @@ public class ShootProjectileComponent : MonoBehaviour
     // Funções animações 
     private void CheckAnimation()
     {
-        currentAnimation = "walk_ene1";
-
-
+        if (enemy_type == 1)
+        {
+            
+            ChangeAnimation("walk_ene1");
+            
+        }else if (enemy_type == 3)
+        {
+            ChangeAnimation("idle_ene3");
+        }
+        else if (enemy_type == 4)
+        {
+            ChangeAnimation("idle_ene4");
+        }
     }
 
 
@@ -107,8 +118,23 @@ public class ShootProjectileComponent : MonoBehaviour
     private IEnumerator Shoot()
     {
         _isDisabled = true;
-        ChangeAnimation("atack_ini1_1"); //Ativa animação ataque
-
+        if (enemy_type == 1)
+        {
+            ChangeAnimation("atack_ini1_1"); //Ativa animação ataque inimigo 1
+        }
+        else if (enemy_type == 2)
+        {
+            ChangeAnimation("preparation_ini2");
+            
+        }
+        else if (enemy_type == 3)
+        {
+            ChangeAnimation("atack_ene3");
+        }
+        else if (enemy_type == 4)
+        {
+            ChangeAnimation("atack_ene4");
+        }
         // TO DO: Rodar animaï¿½ï¿½o aqui antes do yield return
         yield return new WaitForSeconds(_chargeTime);
 

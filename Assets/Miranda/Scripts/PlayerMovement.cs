@@ -37,7 +37,9 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-       // Toca o som de movimento apenas se estiver no chão e se movendo
+        // Toca o som de movimento apenas se estiver no chão e se movendo
+        // nao estava combinando com o jogo
+        /*
         if (horizontal != 0 && NoChao())
         {
             if (!walkSound.isPlaying)
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
             walkSound.Stop();
             }
         }
-
+        */
         // Pular
         if (Input.GetButtonDown("Jump") && NoChao() && !isCrouching) // Não pode pular agachado
         {
