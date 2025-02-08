@@ -583,6 +583,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 2054320236}
+    - target: {fileID: 9003496251410644374, guid: e023f7d09e2cfb146bfd3a7a843951bc, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 2054320244}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -629,6 +633,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &2054320244 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2741748933948529506, guid: e023f7d09e2cfb146bfd3a7a843951bc, type: 3}
+  m_PrefabInstance: {fileID: 1505200013}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

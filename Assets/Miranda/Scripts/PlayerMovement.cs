@@ -5,30 +5,29 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour, IRespawnable
 {
     private float horizontal;
-    private float speed = 8; //velocidade do jogador
-    private float jumpingPower = 12f; //altura do pulo
-    private bool isFacingRight = true; //verdadeiro caso o jogador esteja olhando para direita
+    [SerializeField] private float speed = 8f; // Velocidade normal do jogador
+    [SerializeField] private float crouchSpeed = 4f; // Velocidade reduzida ao agachar
+    private float jumpingPower = 12f; // Altura do pulo
+    private bool isFacingRight = true;
+    private bool isCrouching = false; // Controle do estado de agachamento
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private BoxCollider2D playerCollider; // Collider para modificar ao agachar
 
-    private Transform respawnPoint; // controla o ponto de respawn
-    private bool isDisabled = false;    // isDisabled controla se o Update pode ser chamado ou não. Importante para Respawn
+    private Transform respawnPoint;
+    private bool isDisabled = false;
     public Calor script;
 
-    //animation variables
+    // Animation variables
     private Animator animator;
     private string currentAnimation = "";
 
     private void Start()
     {
-        animator = GetComponent<Animator>(); // pega  referencia animator
+        animator = GetComponent<Animator>(); // Pega referÃªncia do animator
     }
-
-
-  
-   
 
     void Update()
     {
@@ -36,58 +35,77 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetButtonDown("Jump") && NoChao())//pula se o jogador estiver tocando o chão com o layer 'Ground'
+        // Pular
+        if (Input.GetButtonDown("Jump") && NoChao() && !isCrouching) // NÃ£o pode pular agachado
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             ChangeAnimation("jump_start_rap_ani");
         }
 
-        if(script.calor <= 0 ) StartCoroutine(Respawn()); 
+        // Agachar
+        if (Input.GetKeyDown(KeyCode.LeftControl) && NoChao()) // Se pressionar LeftControl e estiver no chÃ£o
+        {
+            isCrouching = true;
+            playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y / 2); // Reduz altura do collider
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl)) // Se soltar LeftControl, levanta
+        {
+            isCrouching = false;
+            playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y * 2); // Restaura o tamanho do collider
+        }
+
+        if (script.calor <= 0) StartCoroutine(Respawn());
+
         Flip();
-
-
-        CheckAnimation(); // chama função de checar animações
+        CheckAnimation();
     }
 
+    private void FixedUpdate()
+    {
+        if (isDisabled) return;
 
-    //função que  muda as animações
+        float moveSpeed = isCrouching ? crouchSpeed : speed; // Se estiver agachado, usa velocidade reduzida
+        rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
+    }
+
+    private bool NoChao()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
     private void CheckAnimation()
     {
-        if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani")
-        {
-            return;
-        }
+        if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani") return;
+
         if (currentAnimation == "jump_up_rap_ani")
         {
             if (rb.linearVelocity.y < 0.2)
-            {
                 ChangeAnimation("jump_down_rap_ani");
-            }
             return;
         }
+
         if (currentAnimation == "jump_down_rap_ani")
         {
             if (NoChao())
-            {
                 ChangeAnimation("jump_end_rap_ani");
-            }
             return;
         }
 
-
-        if (rb.linearVelocityX > 0.5f || rb.linearVelocityX < -0.5f)
+        if (isCrouching)
+        {
+            ChangeAnimation("walk_agachado_ani"); // Ativa animaÃ§Ã£o de agachar
+        }
+        else if (rb.linearVelocity.x > 0.5f || rb.linearVelocity.x < -0.5f)
         {
             ChangeAnimation("walk_rap_ani", 0f);
         }
         else
         {
-            if (currentAnimation != "idle_rap_ani" &&NoChao())
+            if (currentAnimation != "idle_rap_ani" && NoChao())
             {
                 ChangeAnimation("sit_down_rap_ani");
             }
         }
-
-
     }
 
     public void ChangeAnimation(string animation, float crosfade = 0.2f, float time = 0)
@@ -106,48 +124,23 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
             if (currentAnimation != animation)
             {
                 currentAnimation = animation;
-
                 if (currentAnimation == "")
-                {
                     CheckAnimation();
-                }
                 else
                     animator.CrossFade(animation, crosfade);
-
             }
         }
     }
 
-
-
-
-
-    private void FixedUpdate()
-    {
-        if (isDisabled) return;
-
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y); // velocidade de movimento do jogador
-    }
-    private bool NoChao()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer); // Vê se o jogador está tocando o chão 
-
-    }
-
-    
-
-
     private void Flip()
     {
-        if (!isFacingRight && horizontal < 0f || isFacingRight && horizontal > 0f) // Gira o sprite para o direção que o jogador estiver olhando
+        if (!isFacingRight && horizontal < 0f || isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
-        
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -166,16 +159,12 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     public void SetSpawnPoint(Transform transform)
     {
         respawnPoint = transform;
-        
-        // TO DO: Rodar animação de dormir
     }
 
     public IEnumerator Respawn()
     {
         script.calor = 100;
         isDisabled = true;
-
-        // TO DO: Colocar animação e trocar o tempo de WaitForSeconds para o tempo de animação
 
         yield return new WaitForSeconds(0.1f);
 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tela_congelando1_0: 7489847874381030832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
