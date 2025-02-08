@@ -21,6 +21,11 @@ public class ShootProjectileComponent : MonoBehaviour
     private float _playtimeCooldown;
     private Transform _player;
 
+    // Animation variables
+    private Animator animator;
+    private string currentAnimation = "";
+
+
     private void Start()
     {
         _player = FindFirstObjectByType<PlayerMovement>().transform;
@@ -30,6 +35,8 @@ public class ShootProjectileComponent : MonoBehaviour
             Debug.LogError("No projectile found!", this.gameObject);
             Destroy(this);
         }
+
+        animator = GetComponent<Animator>(); // Pega referência do animator
     }
 
     private void Update()
@@ -55,11 +62,52 @@ public class ShootProjectileComponent : MonoBehaviour
             StartCoroutine(Shoot());
             _playtimeCooldown = _shootCooldown;
         }
+
+        CheckAnimation(); //checa animação
     }
+
+    // Funções animações 
+    private void CheckAnimation()
+    {
+        currentAnimation = "walk_ene1";
+
+
+    }
+
+
+    public void ChangeAnimation(string animation, float crosfade = 0.2f, float time = 0)
+    {
+        if (time > 0) StartCoroutine(Wait());
+        else Validate();
+
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(time - crosfade);
+
+           
+            Validate();
+        }
+
+
+        void Validate()
+        {
+            if (currentAnimation != animation)
+            {
+                currentAnimation = animation;
+                if (currentAnimation == "")
+                    CheckAnimation();
+                else
+                    animator.CrossFade(animation, crosfade);
+            }
+        }
+    }
+
+
 
     private IEnumerator Shoot()
     {
         _isDisabled = true;
+        ChangeAnimation("atack_ini1_1"); //Ativa animação ataque
 
         // TO DO: Rodar animação aqui antes do yield return
         yield return new WaitForSeconds(_chargeTime);

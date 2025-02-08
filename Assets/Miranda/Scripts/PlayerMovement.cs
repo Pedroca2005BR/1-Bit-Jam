@@ -93,7 +93,10 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
         if (isCrouching)
         {
-            ChangeAnimation("walk_agachado_ani"); // Ativa animação de agachar
+            if(rb.linearVelocity.x > 0.5f || rb.linearVelocity.x < -0.5f)
+                ChangeAnimation("walk_agachado_ani");
+            
+            else ChangeAnimation("idle_agachado_rap_ani");// Ativa animação de agachar
         }
         else if (rb.linearVelocity.x > 0.5f || rb.linearVelocity.x < -0.5f)
         {
@@ -106,6 +109,8 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
                 ChangeAnimation("sit_down_rap_ani");
             }
         }
+        
+
     }
 
     public void ChangeAnimation(string animation, float crosfade = 0.2f, float time = 0)
@@ -116,8 +121,15 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         IEnumerator Wait()
         {
             yield return new WaitForSeconds(time - crosfade);
-            Validate();
+
+            if (animation == "idle_rap_ani")
+            {
+                if (rb.linearVelocity.y == 0f)
+                    Validate();
+            }else
+                Validate();
         }
+
 
         void Validate()
         {
