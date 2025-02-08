@@ -14,4 +14,5 @@ public class SoundMenuController : MonoBehaviour
     {
         AudioManager.Instance.SFXVolume(sfxSlider.value);
     }
+
 }

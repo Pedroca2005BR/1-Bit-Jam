@@ -3687,11 +3687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
       propertyPath: musicSounds.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
       propertyPath: sfxSounds.Array.data[0].clip
@@ -3701,6 +3701,14 @@ PrefabInstance:
       propertyPath: sfxSounds.Array.data[1].clip
       value: 
       objectReference: {fileID: 8300000, guid: ee3e4180178924048b4280130caac52d, type: 3}
+    - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
+      propertyPath: sfxSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 286b9cbc36c7593498f83af38eba044a, type: 3}
+    - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
+      propertyPath: sfxSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 293d6addd36cc644aa8f3d128eec6b89, type: 3}
     - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
       propertyPath: musicSounds.Array.data[0].clip
       value: 
@@ -3720,6 +3728,14 @@ PrefabInstance:
     - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
       propertyPath: sfxSounds.Array.data[1].soundName
       value: atk4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
+      propertyPath: sfxSounds.Array.data[2].soundName
+      value: playerDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
+      propertyPath: sfxSounds.Array.data[3].soundName
+      value: playerWalk
       objectReference: {fileID: 0}
     - target: {fileID: 7346582421786748855, guid: dc451e19b6a2c5346bb9719c71573e91, type: 3}
       propertyPath: musicSounds.Array.data[0].soundName

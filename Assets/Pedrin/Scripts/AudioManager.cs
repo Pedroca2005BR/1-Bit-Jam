@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public AudioSource GetSFXAudioSource(string name)
-{
+    {
     Sound s = Array.Find(sfxSounds, x => x.soundName == name);
 
     if (s == null)
@@ -82,4 +82,27 @@ public class AudioManager : MonoBehaviour
 
     return newSource;
 }
+
+public AudioSource CreateLoopingSFX(string name)
+{
+    Sound s = Array.Find(sfxSounds, x => x.soundName == name);
+
+    if (s == null)
+    {
+        Debug.Log("Som não encontrado: " + name);
+        return null;
+    }
+
+    GameObject soundObject = new GameObject("LoopingSFX_" + name);
+    AudioSource newSource = soundObject.AddComponent<AudioSource>();
+
+    newSource.clip = s.clip;
+    newSource.volume = sfxSource.volume;
+    newSource.loop = true; // Importante para looping
+    newSource.playOnAwake = false;
+
+    return newSource;
+}
+
+
 }

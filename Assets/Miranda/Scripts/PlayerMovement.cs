@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     private float jumpingPower = 12f; // Altura do pulo
     private bool isFacingRight = true;
     private bool isCrouching = false; // Controle do estado de agachamento
+    private AudioSource walkSound;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     private void Start()
     {
         animator = GetComponent<Animator>(); // Pega referência do animator
+        walkSound = AudioManager.Instance.CreateLoopingSFX("playerWalk");
     }
 
     void Update()
@@ -34,6 +36,22 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         if (isDisabled) return;
 
         horizontal = Input.GetAxisRaw("Horizontal");
+
+       // Toca o som de movimento apenas se estiver no chão e se movendo
+        if (horizontal != 0 && NoChao())
+        {
+            if (!walkSound.isPlaying)
+            {
+            walkSound.Play();
+            }
+        }
+        else
+        {
+            if (walkSound.isPlaying)
+            {
+            walkSound.Stop();
+            }
+        }
 
         // Pular
         if (Input.GetButtonDown("Jump") && NoChao() && !isCrouching) // Não pode pular agachado
@@ -147,11 +165,13 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     {
         if (collision.gameObject.CompareTag("PlayerKiller"))
         {
+            AudioManager.Instance.PlaySFX("playerDamage");
             StartCoroutine(Respawn());
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
+            AudioManager.Instance.PlaySFX("playerDamage");
             StartCoroutine(Respawn());
         }
     }
