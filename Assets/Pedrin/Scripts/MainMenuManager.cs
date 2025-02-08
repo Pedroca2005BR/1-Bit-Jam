@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject creditsPanel;
 
     void Start()
     {
@@ -14,7 +16,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(sceneName);   
+        SceneManager.LoadScene(sceneName);
+        AudioManager.Instance.PlayMusic("nevasca");
     }
 
     public void OpenOptions()
@@ -26,6 +29,18 @@ public class MainMenuManager : MonoBehaviour
     public void CloseOptions()
     {
         optionsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+    }
+
+    public void OpenCredits()
+    {
+        creditsPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+    }
+
+    public void CloseCredits()
+    {
+        creditsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 
