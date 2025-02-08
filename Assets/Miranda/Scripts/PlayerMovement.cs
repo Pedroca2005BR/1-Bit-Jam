@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour, IRespawnable
 {
     private float horizontal;
-    private float speed = 8; //velocidade do jogador
-    private float jumpingPower = 12f; //altura do pulo
+    public float speed = 8; //velocidade do jogador
+    public float jumpingPower = 12f; //altura do pulo
     private bool isFacingRight = true; //verdadeiro caso o jogador esteja olhando para direita
 
     [SerializeField] private Rigidbody2D rb;
