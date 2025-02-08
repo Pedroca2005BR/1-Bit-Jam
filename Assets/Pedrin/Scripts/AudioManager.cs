@@ -57,4 +57,29 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.volume = volume;
     }
+
+    public AudioSource GetSFXAudioSource(string name)
+{
+    Sound s = Array.Find(sfxSounds, x => x.soundName == name);
+
+    if (s == null)
+    {
+        Debug.Log("Som não encontrado: " + name);
+        return null;
+    }
+    
+    // Criar um novo AudioSource para esse efeito sonoro
+    GameObject soundObject = new GameObject("SFX_" + name);
+    AudioSource newSource = soundObject.AddComponent<AudioSource>();
+    
+    newSource.clip = s.clip;
+    newSource.volume = sfxSource.volume; // Herda o volume do gerenciador
+    newSource.loop = false;
+    newSource.playOnAwake = false;
+
+    // O som será destruído quando terminar de tocar
+    Destroy(soundObject, s.clip.length + 0.1f);
+
+    return newSource;
+}
 }

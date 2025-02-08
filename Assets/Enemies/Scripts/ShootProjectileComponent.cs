@@ -14,7 +14,7 @@ public class ShootProjectileComponent : MonoBehaviour
     [SerializeField] private float _chargeTime;
     [SerializeField] private float _rechargeTime;
 
-    [SerializeField] private bool _shootAtPlayer;   // Se true, projétil vai possuir informações em relação ao player.
+    [SerializeField] private bool _shootAtPlayer;   // Se true, projï¿½til vai possuir informaï¿½ï¿½es em relaï¿½ï¿½o ao player.
 
 
     public bool _isDisabled {  get; private set; }
@@ -34,7 +34,7 @@ public class ShootProjectileComponent : MonoBehaviour
 
     private void Update()
     {
-        // _isDisabled é usado para travar o resto do código enquanto algo está acontecendo numa coroutine
+        // _isDisabled ï¿½ usado para travar o resto do cï¿½digo enquanto algo estï¿½ acontecendo numa coroutine
         if (_isDisabled)
         {
             return;
@@ -46,7 +46,7 @@ public class ShootProjectileComponent : MonoBehaviour
         }
 
 
-        // Playtime cooldown é usado aqui como um timer decrescente que comanda quando o tiro deve ser feito
+        // Playtime cooldown ï¿½ usado aqui como um timer decrescente que comanda quando o tiro deve ser feito
         _playtimeCooldown -= Time.deltaTime;
 
         if (_playtimeCooldown <= 0)
@@ -61,7 +61,7 @@ public class ShootProjectileComponent : MonoBehaviour
     {
         _isDisabled = true;
 
-        // TO DO: Rodar animação aqui antes do yield return
+        // TO DO: Rodar animaï¿½ï¿½o aqui antes do yield return
         yield return new WaitForSeconds(_chargeTime);
 
 
@@ -70,7 +70,7 @@ public class ShootProjectileComponent : MonoBehaviour
 
         Vector2 orientation;
 
-        // ShootAtPlayer é usado para identificar inimigos que atiram na direção do player. Isso também significa que eles olham sempre na direção do player
+        // ShootAtPlayer ï¿½ usado para identificar inimigos que atiram na direï¿½ï¿½o do player. Isso tambï¿½m significa que eles olham sempre na direï¿½ï¿½o do player
         if (_shootAtPlayer)
         {
             orientation = (_player.position - transform.position).normalized;
@@ -88,16 +88,16 @@ public class ShootProjectileComponent : MonoBehaviour
                 transform.localScale = newScale;
             }
         }
-        // Se shootAtPlayer for false, o tiro segue a orientação do objeto (inimigo) que atirou
+        // Se shootAtPlayer for false, o tiro segue a orientaï¿½ï¿½o do objeto (inimigo) que atirou
         else
         {
             orientation = new Vector2(transform.localScale.x, transform.localScale.y);
         }
 
-        // Necessário para que o projetil saiba para que lado ir
+        // Necessï¿½rio para que o projetil saiba para que lado ir
         instance.GetComponent<ProjectileBaseBehaviour>().SetDirection(orientation);
 
-        // Necessário para acertar o posicionamento do ataque
+        // Necessï¿½rio para acertar o posicionamento do ataque
         if (transform.localScale.x < 0)
         {
             instance.transform.localScale = new Vector3(instance.transform.localScale.x * -1, instance.transform.localScale.y, instance.transform.localScale.z);
