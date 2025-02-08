@@ -139,8 +139,7 @@ public class ShootProjectileComponent : MonoBehaviour
         yield return new WaitForSeconds(_chargeTime);
 
 
-        // Instantiate cria o projetil com base no prefab colocado em _projectile
-        GameObject instance = Instantiate(_projectile, _attackPoint.position, Quaternion.identity);
+        
 
         Vector2 orientation;
 
@@ -167,6 +166,9 @@ public class ShootProjectileComponent : MonoBehaviour
         {
             orientation = new Vector2(transform.localScale.x, transform.localScale.y);
         }
+
+        // Instantiate cria o projetil com base no prefab colocado em _projectile
+        GameObject instance = Instantiate(_projectile, _attackPoint.position, Quaternion.identity);
 
         // Necess�rio para que o projetil saiba para que lado ir
         instance.GetComponent<ProjectileBaseBehaviour>().SetDirection(orientation);
