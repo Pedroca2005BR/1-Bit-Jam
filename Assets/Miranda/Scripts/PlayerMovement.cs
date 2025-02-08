@@ -28,16 +28,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
 
   
-    //função que  muda as animações
-    private void ChangeAnimation(string animation, float crosfade  = 0.2f)
-    {
-        if(currentAnimation != animation)
-        {
-            currentAnimation = animation;
-            animator.CrossFade(animation, crosfade);
-
-        }
-    }
+   
 
     void Update()
     {
@@ -48,7 +39,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         if(Input.GetButtonDown("Jump") && NoChao())//pula se o jogador estiver tocando o chão com o layer 'Ground'
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-
+            ChangeAnimation("jump_start_rap_ani");
         }
 
         if(script.calor <= 0 ) StartCoroutine(Respawn()); 
@@ -58,7 +49,77 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         CheckAnimation(); // chama função de checar animações
     }
 
-   
+
+    //função que  muda as animações
+    private void CheckAnimation()
+    {
+        if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani")
+        {
+            return;
+        }
+        if (currentAnimation == "jump_up_rap_ani")
+        {
+            if (rb.linearVelocity.y < 0.2)
+            {
+                ChangeAnimation("jump_down_rap_ani");
+            }
+            return;
+        }
+        if (currentAnimation == "jump_down_rap_ani")
+        {
+            if (NoChao())
+            {
+                ChangeAnimation("jump_end_rap_ani");
+            }
+            return;
+        }
+
+
+        if (rb.linearVelocityX > 0.5f || rb.linearVelocityX < -0.5f)
+        {
+            ChangeAnimation("walk_rap_ani", 0f);
+        }
+        else
+        {
+            if (currentAnimation != "idle_rap_ani" &&NoChao())
+            {
+                ChangeAnimation("sit_down_rap_ani");
+            }
+        }
+
+
+    }
+
+    public void ChangeAnimation(string animation, float crosfade = 0.2f, float time = 0)
+    {
+        if (time > 0) StartCoroutine(Wait());
+        else Validate();
+
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(time - crosfade);
+            Validate();
+        }
+
+        void Validate()
+        {
+            if (currentAnimation != animation)
+            {
+                currentAnimation = animation;
+
+                if (currentAnimation == "")
+                {
+                    CheckAnimation();
+                }
+                else
+                    animator.CrossFade(animation, crosfade);
+
+            }
+        }
+    }
+
+
+
 
 
     private void FixedUpdate()
@@ -73,25 +134,12 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     }
 
-    private void CheckAnimation()
-    {
-        if(rb.linearVelocityX >0.05f || rb.linearVelocityX < -0.05f)
-        {
-            ChangeAnimation("walk_rap_ani");
-        }
-        else
-        {
-            ChangeAnimation("Idle_rap_ani");
-        }
-
-
-    }
-
+    
 
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || isFacingRight && horizontal > 0f) // Gira o sprite para o direção que o jogador estiver olhando
+        if (!isFacingRight && horizontal < 0f || isFacingRight && horizontal > 0f) // Gira o sprite para o direção que o jogador estiver olhando
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
