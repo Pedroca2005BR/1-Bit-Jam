@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     }
 
-    public void ChangeAnimation(string animation, float crosfade = 0.2f, float time = 0)
+    public void ChangeAnimation(string animation, float crosfade = 0.1f, float time = 0)
     {
         if (time > 0) StartCoroutine(Wait());
         else Validate();

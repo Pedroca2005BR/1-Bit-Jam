@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
+#if UNITY_EDITOR
 using static UnityEditor.Experimental.GraphView.GraphView;
+#endif
 
 [RequireComponent (typeof(Rigidbody2D))]
 public class ProjectileBaseBehaviour : MonoBehaviour
