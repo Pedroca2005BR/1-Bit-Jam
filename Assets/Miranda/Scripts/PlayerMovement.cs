@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     // Animation variables
     private Animator animator;
     private string currentAnimation = "";
+    private bool ocupied = false;
 
     private void Start()
     {
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         }
         */
         // Pular
+        
         if (Input.GetButtonDown("Jump") && NoChao() && !isCrouching) // Não pode pular agachado
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
             isCrouching = true;
             playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y / 2); // Reduz altura do collider
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl)) // Se soltar LeftControl, levanta
+        else if (Input.GetKeyUp(KeyCode.LeftControl) && NoChao()) // Se soltar LeftControl, levanta
         {
             isCrouching = false;
             playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y * 2); // Restaura o tamanho do collider
@@ -97,12 +99,21 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     {
         if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani") return;
 
-        if (currentAnimation == "jump_up_rap_ani")
+        if(rb.linearVelocity.y > 0.2)
         {
-            if (rb.linearVelocity.y < 0.2)
-                ChangeAnimation("jump_down_rap_ani");
             return;
         }
+
+
+        // if (currentAnimation == "jump_up_rap_ani")
+        //{
+        if (rb.linearVelocity.y < 0.2 && !NoChao())
+        {
+           
+            ChangeAnimation("jump_down_rap_ani");
+            return;
+        }
+       // }
 
         if (currentAnimation == "jump_down_rap_ani")
         {
@@ -135,20 +146,31 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     public void ChangeAnimation(string animation, float crosfade = 0.1f, float time = 0)
     {
-        if (time > 0) StartCoroutine(Wait());
-        else Validate();
+        if (time > 0)
+        {
+            ocupied = true;
+            StartCoroutine(Wait());
+           
+        }
+        else if(!ocupied) Validate();
 
         IEnumerator Wait()
         {
             yield return new WaitForSeconds(time - crosfade);
-
+            ocupied = false;
             if (animation == "idle_rap_ani")
             {
-                if (rb.linearVelocity.y == 0f)
+                if (rb.linearVelocity.y <= 0f && NoChao())
+                {
                     Validate();
+                }
             }
             else
+            {
                 Validate();
+            }
+            
+
         }
 
 

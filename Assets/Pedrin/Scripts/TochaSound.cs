@@ -14,7 +14,7 @@ public class TorchSound : MonoBehaviour
         if (torchAudio != null)
         {
             torchAudio.loop = true; // Mantém o som da tocha tocando continuamente
-            torchAudio.Play();
+           // torchAudio.Play();
         }
     }
 
@@ -40,6 +40,7 @@ public class TorchSound : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("tocou tocha");
             playerNearby = true;
             if (!torchAudio.isPlaying)
             {
