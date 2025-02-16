@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     [SerializeField] private BoxCollider2D playerCollider; // Collider para modificar ao agachar
 
     private Transform respawnPoint;
-    private bool isDisabled = false;
+    public bool isDisabled = false;
     public Calor script;
 
     // Animation variables
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
             isCrouching = true;
             playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y / 2); // Reduz altura do collider
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl) && NoChao()) // Se soltar LeftControl, levanta
+        else if (Input.GetKeyUp(KeyCode.LeftControl) && NoChao() && isCrouching) // Se soltar LeftControl, levanta
         {
             isCrouching = false;
             playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y * 2); // Restaura o tamanho do collider
@@ -92,12 +92,12 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     private bool NoChao()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.26f, groundLayer);
     }
 
     private void CheckAnimation()
     {
-        if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani") return;
+        if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani" || currentAnimation == "resting_ani") return;
 
         if(rb.linearVelocity.y > 0.2)
         {

@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: bc93f72f047872049b7461ab372620e8
+guid: fe52897d7a105704187398392f3f0254
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3105055279841355179
-    second: Raposa_walk_agachado-Sheet_0
+      213: 2692850542902320913
+    second: tile16x32_chao_0
   - first:
-      213: 3335518558261493614
-    second: Raposa_walk_agachado-Sheet_1
+      213: -2458987815663199854
+    second: tile16x32_chao_1
   - first:
-      213: -8513045684810667789
-    second: Raposa_walk_agachado-Sheet_2
-  - first:
-      213: -1292066546516357166
-    second: Raposa_walk_agachado-Sheet_3
+      213: 4571377523769238780
+    second: tile16x32_chao_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +106,53 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Raposa_walk_agachado-Sheet_0
+      name: tile16x32_chao_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
+        y: 48
+        width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.65, y: -0.15}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 16, y: 13}
+        - {x: -16, y: 13}
+        - {x: -16, y: -3}
+        - {x: 16, y: -3}
+      tessellationDetail: 0
       bones: []
-      spriteID: ba525e2635f571b20800000000000000
-      internalID: 3105055279841355179
+      spriteID: 11f19ea2d4dee5520800000000000000
+      internalID: 2692850542902320913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raposa_walk_agachado-Sheet_1
+      name: tile16x32_chao_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
+        x: 0
+        y: 16
+        width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.65, y: -0.15}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 16, y: 13}
+        - {x: -16, y: 13}
+        - {x: -16, y: -3}
+        - {x: 16, y: -3}
+      tessellationDetail: 0
       bones: []
-      spriteID: e6f36e6d4742a4e20800000000000000
-      internalID: 3335518558261493614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Raposa_walk_agachado-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 32
-      alignment: 9
-      pivot: {x: 0.65, y: -0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f82030cd069bd980800000000000000
-      internalID: -8513045684810667789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Raposa_walk_agachado-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 32
-      alignment: 9
-      pivot: {x: 0.65, y: -0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2df0ab45258a11ee0800000000000000
-      internalID: -1292066546516357166
+      spriteID: 29991642c9befddd0800000000000000
+      internalID: -2458987815663199854
       vertices: []
       indices: 
       edges: []
@@ -200,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ccb53844806c82149936caeebb96d255
+    spriteID: 033f69486dc69c84c9a62c9cd9c29f58
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +171,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Raposa_walk_agachado-Sheet_0: 3105055279841355179
-      Raposa_walk_agachado-Sheet_1: 3335518558261493614
-      Raposa_walk_agachado-Sheet_2: -8513045684810667789
-      Raposa_walk_agachado-Sheet_3: -1292066546516357166
+      tile16x32_chao_0: 2692850542902320913
+      tile16x32_chao_1: -2458987815663199854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
