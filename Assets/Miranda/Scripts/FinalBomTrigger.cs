@@ -14,6 +14,9 @@ public class FinalBomTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             FinalBom = true;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            this.GetComponent<SpriteRenderer>().enabled = false;
+
         }
     }
 }
