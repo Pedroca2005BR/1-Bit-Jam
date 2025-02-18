@@ -26,6 +26,7 @@ public class MenuController : MonoBehaviour
     }
 
     public void ReturnToMainMenu(){
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 
