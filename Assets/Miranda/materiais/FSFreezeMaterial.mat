@@ -47,7 +47,7 @@ Material:
     - _Fullscreen_SrcColorBlend: 2
     - _VignetteIntesity: 1.2
     - _VignettePower: 2
-    - _VoronoiIntensity: 0.12592682
+    - _VoronoiIntensity: 0.3085788
     - _VoronoiPower: 0.57
     - _VoronoiSpeed: 1.4
     m_Colors:

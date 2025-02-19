@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -143,6 +144,11 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
 
     }
+    public void TeleporteFinalBom()
+    {
+        transform.position = new Vector3(345, 301, 0);
+
+    }
 
     public void ChangeAnimation(string animation, float crosfade = 0.1f, float time = 0)
     {
@@ -173,6 +179,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
         }
 
+        
 
         void Validate()
         {

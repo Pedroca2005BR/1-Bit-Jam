@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 public class QualFinalEscolhido : MonoBehaviour
 {
@@ -30,7 +30,8 @@ public class QualFinalEscolhido : MonoBehaviour
                 if (script.FinalBom == true)
                 {
                     congelarCalor = true;
-                    //Programação caso o jogador consiga o final bom entra aqui
+                    StartCoroutine(FinalBom());
+                    
 
                 }
                     //Caso o jogador não tenha conseguido o final bom
@@ -54,5 +55,25 @@ public class QualFinalEscolhido : MonoBehaviour
         }
         FadeToWhite.FadeOut();
 
+
     }
+    IEnumerator FinalBom()
+    {
+        while (repete < 6)
+        {
+            yield return new WaitForSeconds(time);
+            PlayerMovement.speed += -velocidadeDimPorSegundo;
+            repete += 1;
+        }
+        FadeToWhite.FadeFinalBom();
+    }
+        public void Final()
+    {
+        if(script.FinalBom) SceneManager.LoadScene("Final_bom");
+        else SceneManager.LoadScene("Final_ruim");
+
+    }
+
+    
+
 }
