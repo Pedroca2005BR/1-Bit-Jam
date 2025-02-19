@@ -8,6 +8,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class ProjectileBaseBehaviour : MonoBehaviour
 {
     public ProjectileDirection _direction;  // A direção que o projetil vai seguir.
+    //protected int _angle;
     [SerializeField] protected float _lifeSpan = 5; // O tempo de vida que o projetil pode ter no máximo
 
     protected Vector2 _orientation = Vector2.zero;

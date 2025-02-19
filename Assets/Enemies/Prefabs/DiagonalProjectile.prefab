@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9926da6d9c977a542a3b2f75537527fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _direction: 2
+  _direction: 3
   _lifeSpan: 5
   _forceMultiplierFloor: 350
   _forceMultiplierCeiling: 400
