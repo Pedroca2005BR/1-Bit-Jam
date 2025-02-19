@@ -16,7 +16,7 @@ public class FinalBomTrigger : MonoBehaviour
             FinalBom = true;
             this.GetComponent<BoxCollider2D>().enabled = false;
             this.GetComponent<SpriteRenderer>().enabled = false;
-
+            AudioManager.Instance.PlaySFX("brakeJail");
         }
     }
 }

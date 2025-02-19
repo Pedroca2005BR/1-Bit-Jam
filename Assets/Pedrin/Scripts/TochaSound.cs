@@ -16,6 +16,7 @@ public class TorchSound : MonoBehaviour
             torchAudio.loop = true; // Mantém o som da tocha tocando continuamente
            // torchAudio.Play();
         }
+        
     }
 
     private void Update()
@@ -56,4 +57,6 @@ public class TorchSound : MonoBehaviour
             playerNearby = false;
         }
     }
+
+    
 }

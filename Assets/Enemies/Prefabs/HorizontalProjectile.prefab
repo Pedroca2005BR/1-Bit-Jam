@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 1
-  _lifeSpan: 8
+  _lifeSpan: 5
   _moveSpeed: 5
 --- !u!58 &2140596364999422907
 CircleCollider2D:

@@ -26,6 +26,8 @@ public class ShootProjectileComponent : MonoBehaviour
     private Animator animator;
     private string currentAnimation = "";
 
+    //Audio variables
+   
 
     private void Start()
     {
@@ -38,6 +40,9 @@ public class ShootProjectileComponent : MonoBehaviour
         }
 
         animator = GetComponent<Animator>(); // Pega referência do animator
+
+        //inicia audios
+        
     }
 
     private void Update()
@@ -121,27 +126,37 @@ public class ShootProjectileComponent : MonoBehaviour
         if (enemy_type == 1)
         {
             ChangeAnimation("atack_ini1_1"); //Ativa animação ataque inimigo 1
+           
         }
         else if (enemy_type == 2)
         {
             ChangeAnimation("preparation_ini2");
-            
+          
         }
         else if (enemy_type == 3)
         {
             ChangeAnimation("atack_ene3");
+            AudioManager.Instance.PlaySFX("atack3");
         }
         else if (enemy_type == 4)
         {
             ChangeAnimation("atack_ene4");
+            AudioManager.Instance.PlaySFX("atack4");
         }
         // TO DO: Rodar animaï¿½ï¿½o aqui antes do yield return
         yield return new WaitForSeconds(_chargeTime);
+        if (enemy_type == 1)
+        {
+            AudioManager.Instance.PlaySFX("atack1");
+        }
+        else if (enemy_type == 2)
+        {
+            AudioManager.Instance.PlaySFX("atack2");
+        }
 
 
-        
 
-        Vector2 orientation;
+            Vector2 orientation;
 
         // ShootAtPlayer ï¿½ usado para identificar inimigos que atiram na direï¿½ï¿½o do player. Isso tambï¿½m significa que eles olham sempre na direï¿½ï¿½o do player
         if (_shootAtPlayer)

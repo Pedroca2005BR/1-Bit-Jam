@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     private bool isFacingRight = true;
     private bool isCrouching = false; // Controle do estado de agachamento
     private AudioSource walkSound;
+    private AudioSource jumpSound;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     {
         animator = GetComponent<Animator>(); // Pega referência do animator
         walkSound = AudioManager.Instance.CreateLoopingSFX("playerWalk");
+        jumpSound = AudioManager.Instance.CreateLoopingSFX("playerJump");
+        jumpSound.loop = false;
+        jumpSound.volume *= 0.3f;
     }
 
     void Update()
@@ -63,6 +67,9 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             ChangeAnimation("jump_start_rap_ani");
+            jumpSound.Play();
+            
+
         }
 
         // Agachar
