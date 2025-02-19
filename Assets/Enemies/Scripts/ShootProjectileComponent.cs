@@ -186,7 +186,16 @@ public class ShootProjectileComponent : MonoBehaviour
         GameObject instance = Instantiate(_projectile, _attackPoint.position, Quaternion.identity);
 
         // Necess�rio para que o projetil saiba para que lado ir
-        instance.GetComponent<ProjectileBaseBehaviour>().SetDirection(orientation);
+        ProjectileBaseBehaviour projectileBaseBehaviour = instance.GetComponent<ProjectileBaseBehaviour>();
+        projectileBaseBehaviour.SetDirection(orientation);
+
+
+        if (projectileBaseBehaviour._direction == ProjectileDirection.Homing)
+        {
+            instance.transform.rotation = transform.rotation;
+        }
+        
+        
 
         // Necess�rio para acertar o posicionamento do ataque
         if (transform.localScale.x < 0)
