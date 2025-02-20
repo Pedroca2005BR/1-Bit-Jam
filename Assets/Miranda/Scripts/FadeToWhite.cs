@@ -77,7 +77,11 @@ public class Fade : MonoBehaviour
         PlayerMovement.TeleporteFinalBom();// teleporta o player para o um local separado para ele ver a pedra
         calor.calor = 100f;// enche barra de calor deixando o efeito invisivel
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
+
+        AudioManager.Instance.PlaySFX("rocha_push");
+
+        yield return new WaitForSeconds(5);
         for (var t = 0.0f; t < 1.0f; t += Time.deltaTime / second)
         {
             //change color as you want

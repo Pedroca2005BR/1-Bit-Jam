@@ -29,7 +29,8 @@ public class Calor : MonoBehaviour
             if (calor > 100) calor = 100;
         }
     }
-    void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    
+    void OnTriggerStay2D(UnityEngine.Collider2D collision)
     {
         //Quando o jogador entrar em colisão com o trigger com tag 'Fogo', a bool tocha recebera valor verdadeiro, signifcando que o jogador está no alcance da tocha.
         if (collision.gameObject.CompareTag("Fogo"))
@@ -41,6 +42,10 @@ public class Calor : MonoBehaviour
     private void OnTriggerExit2D(UnityEngine.Collider2D collision)
     {
         //Quando o jogador sair do collider de algo a bool tocha recebera valor negativo, o que faz o jogador perder lentamente a barra de calor.
-        tocha = false;
+
+        if (collision.gameObject.CompareTag("Fogo"))
+        {
+            tocha = false;
+        }
     }
 }
