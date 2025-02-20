@@ -74,6 +74,11 @@ public class Fade : MonoBehaviour
         }
 
         PlayerMovement.isDisabled = true;//player nao pode se mover
+        //PlayerMovement.speed = 0f;
+        //PlayerMovement.crouchSpeed = 0f;
+        
+
+
         PlayerMovement.TeleporteFinalBom();// teleporta o player para o um local separado para ele ver a pedra
         calor.calor = 100f;// enche barra de calor deixando o efeito invisivel
 

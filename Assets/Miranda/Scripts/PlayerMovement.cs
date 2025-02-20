@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 {
     private float horizontal;
     [SerializeField] public float speed = 8f; // Velocidade normal do jogador
-    [SerializeField] private float crouchSpeed = 4f; // Velocidade reduzida ao agachar
+    [SerializeField] public float crouchSpeed = 4f; // Velocidade reduzida ao agachar
     private float jumpingPower = 12f; // Altura do pulo
     private bool isFacingRight = true;
     private bool isCrouching = false; // Controle do estado de agachamento
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform floorCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider; // Collider para modificar ao agachar
 
@@ -39,7 +40,12 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
 
     void Update()
     {
-        if (isDisabled) return;
+        if (isDisabled)
+        {
+            horizontal = 0f;
+            return;
+        }
+        
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -73,12 +79,12 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         }
 
         // Agachar
-        if (Input.GetKeyDown(KeyCode.LeftControl) && NoChao()) // Se pressionar LeftControl e estiver no chão
+        if (Input.GetKeyDown(KeyCode.LeftControl) && NoChao() && !isCrouching) // Se pressionar LeftControl e estiver no chão
         {
             isCrouching = true;
             playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y / 2); // Reduz altura do collider
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl) && NoChao() && isCrouching) // Se soltar LeftControl, levanta
+        else if (Input.GetKeyUp(KeyCode.LeftControl) && NoChao() && isCrouching && !NoTeto()) // Se soltar LeftControl, levanta
         {
             isCrouching = false;
             playerCollider.size = new Vector2(playerCollider.size.x, playerCollider.size.y * 2); // Restaura o tamanho do collider
@@ -94,7 +100,7 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     {
         if (isDisabled) return;
 
-        float moveSpeed = isCrouching ? crouchSpeed : speed; // Se estiver agachado, usa velocidade reduzida
+        float moveSpeed = isCrouching ? speed/2 : speed; // Se estiver agachado, usa velocidade reduzida
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -103,6 +109,10 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
         return Physics2D.OverlapCircle(groundCheck.position, 0.26f, groundLayer);
     }
 
+    private bool NoTeto()
+    {
+        return Physics2D.OverlapCircle(floorCheck.position, 0.26f, groundLayer);
+    }
     private void CheckAnimation()
     {
         if (currentAnimation == "jump_start_rap_ani" || currentAnimation == "jump_end_rap_ani" || currentAnimation == "resting_ani") return;
