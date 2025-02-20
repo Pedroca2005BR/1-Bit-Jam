@@ -92,6 +92,7 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
+        
         if(!started)
         {
             return;

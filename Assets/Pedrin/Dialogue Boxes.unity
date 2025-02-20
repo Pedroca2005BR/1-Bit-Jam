@@ -567,13 +567,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5564560502719408883}
     m_Modifications:
+    - target: {fileID: 761813881047559650, guid: bfd31867788d13a409fd9921c97eee2f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1968034580942307760, guid: bfd31867788d13a409fd9921c97eee2f, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1968034580942307760, guid: bfd31867788d13a409fd9921c97eee2f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.418
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910435546530244808, guid: bfd31867788d13a409fd9921c97eee2f, type: 3}
+      propertyPath: m_text
+      value: teste
       objectReference: {fileID: 0}
     - target: {fileID: 2910435546530244808, guid: bfd31867788d13a409fd9921c97eee2f, type: 3}
       propertyPath: m_VerticalAlignment
@@ -647,11 +655,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c99176626fc69242817ebf7d663f97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  crouchSpeed: 4
   rb: {fileID: 1706151850754652622}
   groundCheck: {fileID: 2814216381652271863}
-  gorundLayer:
+  groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  playerCollider: {fileID: 0}
+  isDisabled: 0
+  script: {fileID: 0}
 --- !u!212 &2409727508813240428
 SpriteRenderer:
   m_ObjectHideFlags: 0

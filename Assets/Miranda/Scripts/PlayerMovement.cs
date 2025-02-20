@@ -216,13 +216,13 @@ public class PlayerMovement : MonoBehaviour, IRespawnable
     {
         if (collision.gameObject.CompareTag("PlayerKiller"))
         {
-            AudioManager.Instance.PlaySFX("playerDamage");
+            //AudioManager.Instance.PlaySFX("playerDamage");
             StartCoroutine(Respawn());
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            AudioManager.Instance.PlaySFX("playerDamage");
+            //AudioManager.Instance.PlaySFX("playerDamage");
             StartCoroutine(Respawn());
         }
     }
